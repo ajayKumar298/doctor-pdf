@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Compressor</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; background-color: #f0f0f0; }
+    .container { background: white; padding: 20px; border-radius: 10px; max-width: 500px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input, select, button { width: 100%; padding: 10px; margin-top: 10px; }
+    button { background-color: #007BFF; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: #0056b3; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Instant PDF Compressor</h2>
+    <form action="/compress" method="POST" enctype="multipart/form-data">
+      <label>Upload PDF:</label>
+      <input type="file" name="pdf" accept="application/pdf" required>
+      <label>File Size:</label>
+      <input type="number" name="targetSize" placeholder="Enter target size (in KB)" required>
+      <select name="unit">
+        <option value="kb" selected>KB</option>
+      </select>
+      <button type="submit">Compress</button>
+    </form>
+  </div>
+</body>
+</html>
